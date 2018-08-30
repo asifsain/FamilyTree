@@ -1,0 +1,12 @@
+<!-- style="border-color: brown; border: 1px; border-style: groove;" -->
+<div  >
+<p [ngStyle]="indentObj" >
+  {{familyData.name}}
+</p>
+
+<div *ngFor="let member of familyData.children" > 
+
+    <app-user-dashboard  [familyData]="member" [indent]=indent></app-user-dashboard>
+
+</div>
+</div>

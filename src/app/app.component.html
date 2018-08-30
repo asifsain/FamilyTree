@@ -1,20 +1,69 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+
+
+<!-- <div   *ngFor=" let user of [1,2,3,4,5]; " >
+  {{user}}
+<app-login ></app-login>
+</div> -->
+
+
+<button style="background-color: aquamarine" (click)="userDashboardToggle = !userDashboardToggle">FAMILY TREE</button> <br>
+<div style="width: 2000px; height: 2000px; background-color: red" *ngIf="false"> 
+  <div style="position: relative; width: 500px; height: 500px; left: 300px; background-color: antiquewhite;">
+    <p>Qamar</p>
+    <div class="row" style="position: relative;">
+      <div style="border: 1px solid red;" class="column" style="position: relative;">
+        <p>Shahzad</p>
+        <div class="row" style="position: relative;">
+        <div class="column" style="position: relative;"><p>Fayha</p></div>
+        <div class="column" style="position: relative;"><p>Fauz</p></div>
+        </div>
+      </div>
+      <div style="border: 1px solid  green; " class="column" style="position: relative;">
+        <p>Shenu</p>
+        <div class="row" style="position: relative;">
+
+          <div style="border: 1px solid  green; " class="column" style="position: relative;">
+            <p>Wafeeqah</p>
+          </div>
+          <div style="border: 1px solid  green; " class="column" style="position: relative;">
+            <p>Wanya</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="true">
+  <div id="userDashboard" *ngIf="userDashboardToggle">
+    <div>
+      <app-user-dashboard [familyData]="familyData" [indent]=20></app-user-dashboard>
+    </div>
+  </div>
+
+  <div>
+    <app-tree-view *ngIf="!userDashboardToggle"></app-tree-view>
+  </div>
+
+  <div *ngIf="false">
+
+    <input #mytext name="imp-text" (keyup)="valChange($event, mytext, user)">
+    <div *ngFor="let user of ['Japan','Russia','Croatia','Uganda'] as users; index as i; first as isFirst">
+      {{mytext.value}} <span *ngIf="isFirst">default</span>
+
+    </div>
+
+    <output style="visibility: visible; font-size: 8em;">yaar yeah output hai</output> <br>
+    <output aria-label="yeah bhi hai">yaar yeah output hai</output> <br>
+    <button>click here</button> <br>
+    <button [style.background-color]="mytext.value">{{mytext.value}}</button> <br>
+
+
+    <app-sizer [(size)]="fontSizePx"></app-sizer>
+    <div [style.font-size.px]="fontSizePx">Resizable Text</div>
+  </div>
+
+</div>
